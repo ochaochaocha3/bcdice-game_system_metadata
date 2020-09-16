@@ -1,0 +1,50 @@
+[[commands]]
+game_system = "BattleTech"
+title = "命中判定"
+syntax = "(回数)BT(ダメージ)(部位)+(基本値)>=(目標値)"
+description = """
+回数は省略時1固定。
+部位はC（正面）R（右）、L（左）。省略時はC（正面）固定。
+U（上半身）、L（下半身）を組み合わせ、CU/RU/LU/CL/RL/LLも指定可能。
+"""
+
+  [[commands.examples]]
+  command = "BT3+2>=4"
+  description = "正面からダメージ3の攻撃を技能ベース2目標値4で1回判定"
+
+  [[commands.examples]]
+  command = "2BT3RL+5>=8"
+  description = "右下半身にダメージ3の攻撃を技能ベース5目標値8で2回判定"
+
+[[commands]]
+game_system = "BattleTech"
+title = "SRM命中判定"
+syntax = "(回数)SRM(2|4|6)(部位)+(基本値)>=(目標値)"
+
+  [[commands.examples]]
+  command = "3SRM6LU+5>=8"
+  description = "左上半身にSRM6連を技能ベース5目標値8で3回判定"
+
+[[commands]]
+game_system = "BattleTech"
+title = "LRM命中判定"
+syntax = "(回数)LRM(5|10|15|20)(部位)+(基本値)>=(目標値)"
+
+[[commands]]
+game_system = "BattleTech"
+title = "致命的命中表"
+syntax = "CT"
+
+[[commands]]
+game_system = "BattleTech"
+title = "転倒後の向き表"
+syntax = "DW"
+
+[[commands]]
+game_system = "BattleTech"
+title = "メック戦士意識維持表"
+syntax = "CDx"
+description = "ダメージ値xで判定"
+
+  [[commands.examples]]
+  command = "CD3"
