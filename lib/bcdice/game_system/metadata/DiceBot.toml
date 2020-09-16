@@ -1,0 +1,113 @@
+[[commands]]
+game_system = "DiceBot"
+title = "加算ロール"
+syntax = "(個数)D(面数)+(ボーナス)"
+description = "ダイスの値の和を求める。"
+
+  [[commands.examples]]
+  command = "3D6+1>=9"
+  description = "3d6+1で目標値9以上かの判定"
+
+  [[commands.examples]]
+  command = "1D100<=50"
+  description = "D100で50％目標の下方ロール"
+
+  [[commands.examples]]
+  command = "(8/2)D(4+6)<=(5*3)"
+  description = "個数、面数、達成値には四則演算も使用可能"
+
+  [[commands.examples]]
+  command = "3D6+2D10+4-1"
+  description = "ダイスロールを足したり引いたり、ボーナスを足したり引いたりも可能"
+
+  [[commands.examples]]
+  command = "3D6/2"
+  description = "ダイス出目を割り算（切り捨て）。切り上げは /2U、四捨五入は /2R。"
+
+[[commands]]
+game_system = "DiceBot"
+title = "D66ロール"
+syntax = "D66(N|S)"
+description = """
+D66ロール。
+NまたはSを省略した場合、順序はゲームに依存。D66N：そのまま、D66S：昇順。
+"""
+
+[[commands]]
+game_system = "DiceBot"
+title = "バラバラロール"
+syntax = "(個数)B(面数)"
+description = """
+各ダイスの値を表示する。ボーナスは記入できない。
+最後に条件を指定すると、条件を満たすダイスの個数を数える。
+"""
+
+  [[commands.examples]]
+  command = "3B6"
+  description = "3D6のダイス目をバラバラのまま出力する（合計しない）"
+
+  [[commands.examples]]
+  command = "10B6>=4"
+  description = "10D6を振り4以上のダイスの個数を数える"
+
+[[commands]]
+game_system = "DiceBot"
+title = "個数振り足しロール"
+syntax = "(個数)R(面数)"
+description = """
+ダイスをバラバラにロールし、その成功数の個数分さらにロールして成功度を加算するロール（天羅万象など）。
+振り足し回数はゲーム設定によって設定される（デフォルトは無限）。
+条件式は必須。
+"""
+
+  [[commands.examples]]
+  command = "3R6>=4"
+  description = "3B6のダイス目が4以上の場合に振り足しして、成功数を合計する"
+
+[[commands]]
+game_system = "DiceBot"
+title = "個数振り足しロール"
+syntax = "(個数)R(面数)[境界値]"
+description = """
+ダイスをバラバラにロールして、その結果が境界値以上になると再度振り、その値をダイス目に加えることができるロール（ロールマスターやシャドウランなど）。
+条件式がない場合は、合計値を表示する。
+条件式をつけると、目標値にいくつ達したかも表示する。
+"""
+
+  [[commands.examples]]
+  command = "3U6[5]"
+  description = "3D6のダイス目が5以上の場合に振り足しして、合計値を表示する"
+
+  [[commands.examples]]
+  command = "3U6[6]>=6"
+  description = "3D6のダイス目が6以上の場合に振り足しして、合計値と成功数を表示する"
+
+[[commands]]
+game_system = "DiceBot"
+title = "シークレットロール"
+syntax = "S(ダイスコマンド)"
+description = "他のプレイヤーから隠れてロールする。返信は自身のみに送られる。"
+
+  [[commands.examples]]
+  command = "S3D6"
+  description = "他のプレイヤーから隠れて3D6をロールする。"
+
+[[commands]]
+game_system = "DiceBot"
+title = "四則演算"
+syntax = "C(計算式)"
+description = "四則演算を行う。経験値の計算などに利用できる。"
+
+  [[commands.examples]]
+  command = "C(10-4*3/2+2)"
+  description = "10-4*3/2+2を計算する"
+
+[[commands]]
+game_system = "DiceBot"
+title = "選択"
+syntax = "CHOICE[a,b,...]"
+description = "列挙された要素から1つ選択して表示する。ランダム攻撃対象決定などに利用できる。"
+
+  [[commands.examples]]
+  command = "CHOICE[グー,チョキ,パー]"
+  description = "グー、チョキ、パーのうち1つを選んで表示する"
