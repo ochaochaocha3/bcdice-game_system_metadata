@@ -1,0 +1,19 @@
+[[commands]]
+game_system = "AFF2e"
+title = "対抗なしロール"
+syntax = "FF{目標値}+{補正}"
+
+[[commands]]
+game_system = "AFF2e"
+title = "対抗ロール"
+syntax = "FR{能力値}+{補正}"
+
+[[commands]]
+game_system = "AFF2e"
+title = "武器ロール"
+syntax = "FD[2,3,3,3,3,3,4]+{補正}"
+
+[[commands]]
+game_system = "AFF2e"
+title = "防具ロール"
+syntax = "FD[0,0,0,0,1+1,1+1,2+2]+{補正}"
