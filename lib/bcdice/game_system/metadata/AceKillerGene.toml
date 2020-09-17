@@ -1,0 +1,35 @@
+[[commands]]
+game_system = "AceKillerGene"
+title = "基本判定"
+syntax = "AKx/y@z"
+description = """
+x：成功率、y：連続攻撃回数（省略可）、z：クリティカル値（省略可）
+連続攻撃では1回の判定のみが実施される。
+"""
+
+  [[commands.examples]]
+  command = "AK55"
+
+  [[commands.examples]]
+  command = "AK100/2"
+
+  [[commands.examples]]
+  command = "AK70@10"
+
+  [[commands.examples]]
+  command = "AK155/3@44"
+
+[[commands]]
+game_system = "AceKillerGene"
+title = "負傷表"
+syntax = "DCxxy"
+description = """
+xx：属性（切断：SL，銃弾：BL，衝撃：IM，灼熱：BR，冷却：RF，電撃：EL）
+y：ダメージ
+"""
+
+  [[commands.examples]]
+  command = "DCSL7"
+
+  [[commands.examples]]
+  command = "DCEL22"
